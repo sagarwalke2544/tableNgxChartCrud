@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.me-1 {
+    margin-right: 8px;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.gap-2 {
+    gap: 16px;
+}
+
+.w-50 {
+    width: 50%;
+}
+.w-100 {
+    width: 100%;
+}
+
+.red-color {
+    color: red;
+}
+
+.p-datatable-thead {
+    text-align: left;
+}
+
+.table-btn {
+    margin: 8px;
+}
+
+.p-dialog .p-dialog-header {
+    padding: 8px;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 0px 18px 18px 18px;
+}
+
+.p-datatable-wrapper {
+    margin-bottom: 50px;
+}
+
+/* .p-inputtext {
+    margin: 8px;
+} */
+
+.p-dropdown {
+    width: 100%;
+}
+
+.delete-btn {
+    background-color: red;
+    border: 1px solid red;
+}
+
+.delete-btn:hover {
+    background-color: red !important;
+    border: 1px solid red !important;
+}

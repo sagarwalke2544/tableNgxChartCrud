@@ -1,0 +1,52 @@
+<h1 class="mb-3">Products</h1>
+<button pButton class="mb-2" (click)="addEditRowData()">Add New Product</button>
+<div class="ui-table-wrapper mb-2">
+<p-table [value]="products" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr class="text-left">
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{product.code}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <button pButton type="button" class="table-btn" (click)="addEditRowData(product)"><i class="pi pi-pencil"></i></button>
+                <button pButton type="button" class="table-btn delete-btn" (click)="deleteRowData(product)"><i class="pi pi-trash"></i></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td>No Record found</td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<h2 class="mb-2">Chart Data</h2>
+<div *ngIf="dataArr.length">
+    <ngx-charts-bar-vertical
+    [view]="view"
+    [results]="dataArr"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+</div>
+<div *ngIf="!dataArr.length">
+    <h4>No Record Found</h4>
+</div>

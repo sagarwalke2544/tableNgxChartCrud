@@ -1,0 +1,30 @@
+<div>
+    <h3>Table Data</h3>
+    <form [formGroup]="productFormGroup">
+        <div class="mb-2">
+            <div class="mb-2 d-flex gap-2">
+                <input type="hidden" pInputText placeholder="code" formControlName="code" />
+                <div class="w-50">
+                    <input type="text" pInputText placeholder="name" formControlName="name" class="w-100" />
+                    <p *ngIf="productFormGroup.get('name').errors?.required && productFormGroup.get('name').touched" class="red-color m-0">Please Enter Name</p>
+                </div>
+                <div class="w-50">
+                    <p-dropdown formControlName="category" placeholder="category" [options]="categoryOptions" optionLabel="label"   class="w-100">select</p-dropdown>
+                    <p *ngIf="productFormGroup.get('category').errors?.required && productFormGroup.get('category').touched" class="red-color m-0">Please Select option</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <div class="w-50">
+                    <input type="number" pInputText placeholder="quantity" formControlName="quantity" class="w-100"/>
+                    <p *ngIf="productFormGroup.get('quantity').errors?.required && productFormGroup.get('quantity').touched" class="red-color m-0">Please Enter valid quantity</p>
+                </div>
+                <div class="w-50">
+                    <input type="number" pInputText placeholder="price" formControlName="price" class="w-100" length="5"/>
+                    <p *ngIf="productFormGroup.get('price').errors?.required && productFormGroup.get('price').touched" class="red-color m-0">Please Enter Valid Price</p>
+                </div>
+            </div>
+        </div>
+        <button type="button" pButton (click)="saveProduct($event)" [disabled]="!productFormGroup.valid">Save</button>
+    </form>
+
+</div>
